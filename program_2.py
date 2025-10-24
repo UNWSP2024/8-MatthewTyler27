@@ -1,23 +1,28 @@
-# Program #2: Word Separator
-# Write a program that accepts as input a sentence in which all of the words are run together, 
-# but the first character of each word is uppercase.  
-# Convert the sentence to a string in which the words are separated by spaces, 
-# and the first word starts with an uppercase.  
-# For example the string "StopAndSmellTheRoses" would be converted to "Stop and smell the roses."
-
-# Start your changes on line 13
+#Matthew Tyler
+#10/24/25
+#Word Seperator
 
 def word_separator(sentence):
 
     new_sentence = ""
-    #    Add your logic here
+    #Keep first letter the same
+    new_sentence = sentence[0]
+
+    for letter in sentence[1:]:
+        #check if letter is uppercase
+        if letter.isupper():
+            #add space and make lowercase
+            new_sentence +=  " " + letter.lower()
+        else:
+            #Continue adding the letters to new sentence
+            new_sentence += letter
+    #Add Period
+    new_sentence = new_sentence + "."
+
 
     return new_sentence.strip()
 
 # Example usage
-
 sentence = "StopAndSmellTheRoses"
-
 new_sentence = word_separator(sentence)
-
 print(new_sentence)

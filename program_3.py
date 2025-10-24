@@ -1,8 +1,24 @@
-# Program #3: Capital Quiz
-# Write a program that creates a dictionary containing the U.S. states as keys, 
-# and their capitals as values.  
-# The program should then randomly quiz the user by displaying the name of a state 
-# and asking the user to enter the state's capital.  
-# The program should count of the number of correct and incorrect responses.  
-# (You could alternatively use another country and provinces, 
-# or countries of the world and capitals).
+#Matthew Tyler
+#10/24/25
+#Capital Quiz
+
+import random
+
+midwest_states = ["Minnesota", "Wisconsin", "Iowa", "Michigan", 
+"North Dakota","South Dakota", "Nebraska", "Kansas", "Missouri",
+"Illinois", "Indiana", "Ohio"]
+
+midwest_Capitals = {"Minnesota": "St. paul", "Wisconsin": "Madison", "Iowa": "Des Moines", "Michigan": "Lansing", 
+"North Dakota": "Bismarck","South Dakota": "Pierre", "Nebraska": "Lincoln", "Kansas": "Topeka", "Missouri": "Jefferson City",
+"Illinois": "Springfield", "Indiana": "Indianapolis", "Ohio": "Columbus"}
+
+
+def Captital_quiz():
+    state = random.choice(midwest_states)
+    quiz = input("What is the capital of:" + state )
+    if midwest_Capitals[state] == quiz:
+        print("Correct!")
+    else:
+        print("Sorry, inncorrect")
+
+Captital_quiz()
